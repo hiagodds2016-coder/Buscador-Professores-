@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        /* Paleta de Cores Santa Marina (Aproximada) */
+        /* Paleta de Cores Santa Marina (Aproximada ) */
         :root {
             --color-primary: #003366; /* Azul Marinho Escuro */
             --color-secondary: #1976D2; /* Azul Médio */
@@ -337,7 +337,7 @@
     <div class="main-container">
         <!-- Header -->
         <div class="header">
-            <img src="logosantamarina.png" alt="Logo Santa Marina" class="logo-header">
+            <img src="logo-santa-marina.png" alt="Logo Santa Marina" class="logo-header">
             <p>Encontre a sala do professor em tempo real</p>
         </div>
 
@@ -399,9 +399,10 @@
         };
 
         // Função para carregar os dados JSON
-        async function loadData() {
+        async function loadData( ) {
             try {
-                const response = await fetch('professores_salas_schedule.json');
+                // Referência corrigida para o arquivo de dados
+                const response = await fetch('dados-horarios.json');
                 if (!response.ok) {
                     throw new Error(`Erro ao carregar os dados: ${response.statusText}`);
                 }
@@ -409,7 +410,7 @@
                 console.log('Dados carregados com sucesso:', Object.keys(professorData).length, 'professores.');
             } catch (error) {
                 console.error('Falha ao carregar os dados:', error);
-                document.getElementById('results-container').innerHTML = '<div class="no-results"><i class="fas fa-exclamation-triangle"></i><p>Erro ao carregar a lista de professores. Tente novamente mais tarde.</p></div>';
+                document.getElementById('results-container').innerHTML = '<div class="no-results"><i class="fas fa-exclamation-triangle"></i><p>Erro ao carregar a lista de professores. Verifique se o arquivo "dados-horarios.json" está na raiz.</p></div>';
             }
         }
 
