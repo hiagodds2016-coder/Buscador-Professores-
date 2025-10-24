@@ -402,7 +402,7 @@
         async function loadData( ) {
             try {
                 // Referência corrigida para o arquivo de dados
-                const response = await fetch('dados-horarios.json');
+                const response = await fetch('professores_salas_schedule.json');
                 if (!response.ok) {
                     throw new Error(`Erro ao carregar os dados: ${response.statusText}`);
                 }
